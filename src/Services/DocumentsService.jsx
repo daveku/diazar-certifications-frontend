@@ -1,8 +1,8 @@
-const URL = "http://api.davidku.dev:5555/api/v1/docs";
+const URL = "http://localhost:5555/api/v1/docs";
 
 function getDocument(ID) {
   return new Promise((resolve, reject) => {
-    fetch(`${URL}/${ID}`)
+    fetch(`${URL}/${ID}`, { method: "GET" })
       .then((res) => res.json())
       .then((data) => resolve(data))
       .catch((err) => reject(err));
